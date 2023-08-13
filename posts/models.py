@@ -13,9 +13,8 @@ class Post(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     published = models.BooleanField(default=False)
     author = models.ForeignKey(User, on_delete=SET_NULL, null=True)
-    #Si el autor se borra se quedará el post pero sin author
+    # Al cancelarse el autor se queda el post anónimo
     category = models.ForeignKey(Category, on_delete=SET_NULL, null=True)
     
     def __str__(self):
-        # Para que en el panel ma salga el titulo del post
         return self.title

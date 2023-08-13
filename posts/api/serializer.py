@@ -4,9 +4,7 @@ from users.api.serializer import UserSerializer
 from categories.api.serializer import CategorySerializer
 
 class PostSerializer(serializers.ModelSerializer):
-    #para que obtengamos el json del author del post
     author = UserSerializer()
-    # lo mismo con categoría
     category = CategorySerializer()
     
     class Meta:

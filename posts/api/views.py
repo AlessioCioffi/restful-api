@@ -10,7 +10,7 @@ class PostApiViewSet(ModelViewSet):
     serializer_class = PostSerializer
     queryset = Post.objects.all()
     filter_backends = [DjangoFilterBackend]
-    #podemos filtrar por categoría con id o con el title
+    # podemos filtrar por categoría mediante id o title
     filterset_fields = ['category','category__title']
     #http://127.0.0.1:8000/api/posts/?category__title=Barcos
     #http://127.0.0.1:8000/api/posts/?category=8

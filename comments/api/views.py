@@ -10,7 +10,6 @@ class CommentApiViewSet(ModelViewSet):
     permission_classes = [IsOwnerOrReadAndCreateOnly]
     serializer_class = CommentSerializer
     queryset = Comment.objects.all()
-    # ordenar los comentarios por fecha
     filter_backends = [OrderingFilter, DjangoFilterBackend]
     ordering = ['created_at']
     filterset_fields = ['post']
